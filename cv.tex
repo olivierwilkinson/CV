@@ -11,6 +11,25 @@
 \author{olivier.wilkinson@gmail.com\\+447931405305}
 \date{} % Don't show a date
 
+% Define table style
+\newcolumntype{L}{>{\raggedleft}p{0.15\textwidth}}
+\newcolumntype{R}{p{0.7\textwidth}}
+\definecolor{lightgray}{gray}{0.8}
+\newcommand\VerticalRule{\color{lightgray}\vrule width 0.5pt}
+
 \begin{document}
 \maketitle
+
+\section*{Education}
+\begin{tabular}{L!{\VerticalRule}R}
+	2009--2013 & {\bf University of Bristol}                                            \\
+	           & BSc in Physics                                                         \\
+
+	           &                                                                        \\
+
+	2003--2009 & {\bf Bedales School}                                                   \\
+	           & A-level: AAB (Mathematics, Physics, Chemistry)                         \\
+	           & AS-level: AAA (Further Mathematics, Economics, Information Technology) \\
+\end{tabular}
+
 \end{document}
