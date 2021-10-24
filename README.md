@@ -11,6 +11,12 @@
 [![Latest Release][release-badge]][release]
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+## What is this?
+
+My CV written in LaTeX format, with a GitHub Actions workflow
+to generate a PDF which is added as an asset to release tags produced by
+Semantic Release.
+
 ## Motivation
 
 First and foremost: it sounded fun! There are a couple benefits though:
