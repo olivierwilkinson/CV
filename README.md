@@ -1,7 +1,15 @@
-# My CV
+<div align="center">
+  <h1>My CV</h1>
+  <p>
+    Written, built and released with love using LaTeX, GitHub Actions, and Semantic Release.
+  </p>
+</div>
 
-Written, built and released with love using LaTeX, GitHub Actions, and Semantic
-Release.
+<hr />
+
+[![Build Status][build-badge]][build]
+[![Latest Release][release-badge]][release]
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ## Motivation
 
@@ -77,3 +85,8 @@ cpan Unicode::GCString
 ### Install LaTeX Workshop VSCode extension
 
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
+
+[build-badge]: https://img.shields.io/github/workflow/status/olivierwilkinson/CV/main/main?style=flat
+[build]: https://github.com/olivierwilkinson/CV/actions?query=branch%3Amain+workflow%3Amain
+[release-badge]: https://img.shields.io/github/v/release/olivierwilkinson/CV?display_name=release&style=flat
+[release]: https://github.com/olivierwilkinson/CV/releases
