@@ -1,0 +1,44 @@
+name: Main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Git repository
+        uses: actions/checkout@v2
+
+      - name: Generate CV
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+
+      - name: Upload CV
+        uses: actions/upload-artifact@v2
+        with:
+          name: cv
+          path: cv.pdf
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Git repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+
+      - name: Download CV
+        uses: actions/download-artifact@v2
+        with:
+          name: cv
+
+      - name: Release CV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
