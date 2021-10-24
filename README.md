@@ -62,13 +62,13 @@ export PATH=$PATH:$LATEXINDENT
 #### Setup Perl
 
 Setup Perl via homebrew if it is not already. The system Perl is for Mac OS and
-(will cause problems if used)[https://stackoverflow.com/questions/52682304/fatal-error-extern-h-file-not-found-while-installing-perl-modules/52997962#52997962]
+[will cause problems if used](https://stackoverflow.com/questions/52682304/fatal-error-extern-h-file-not-found-while-installing-perl-modules/52997962#52997962)
 
 ```sh
 brew install perl
 ```
 
-Setup Perl to (use brew installation)[https://docs.brew.sh/Gems,-Eggs-and-Perl-Modules]
+Setup Perl to [use brew installation](https://docs.brew.sh/Gems,-Eggs-and-Perl-Modules)
 
 ```sh
 sudo cpan local::lib
@@ -90,7 +90,7 @@ cpan Unicode::GCString
 
 ### Install LaTeX Workshop VSCode extension
 
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
+[VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
 
 [build-badge]: https://img.shields.io/github/workflow/status/olivierwilkinson/CV/main/main?style=flat
 [build]: https://github.com/olivierwilkinson/CV/actions?query=branch%3Amain+workflow%3Amain
