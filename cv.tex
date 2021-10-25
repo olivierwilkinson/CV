@@ -5,6 +5,10 @@
 \usepackage[sfdefault]{roboto}
 \usepackage[T1]{fontenc}
 \usepackage{array, xcolor}
+\usepackage{graphicx}
+
+% Setup packages
+\graphicspath{ {./assets/} }
 
 % Document metadata
 \title{\bfseries\Huge Olivier Wilkinson}
@@ -20,6 +24,14 @@
 \definecolor{lightgray}{gray}{0.8}
 \newcommand\VerticalRule{\color{lightgray}\vrule width 0.5pt}
 \setlength{\extrarowheight}{5pt}
+
+% Setup icons
+\newcommand{\Icon}[2][0.5cm]{
+	\begingroup
+	\setbox0=\hbox{\includegraphics[height=#1, width=#1]{#2}}
+	\parbox{\wd0}{\box0}
+	\endgroup
+}
 
 \begin{document}
 \maketitle
@@ -57,5 +69,41 @@
 	2003--2009 & {\bf Bedales School}                                                   \\
 	           & A-level: AAB (Mathematics, Physics, Chemistry)                         \\
 	           & AS-level: AAA (Further Mathematics, Economics, Information Technology) \\
+\end{tabular}
+
+\section*{Open Source}
+\begin{tabular}{L!{\VerticalRule}R}
+	Typescript   & {\bf WebdriverIO Testing Library}  --  Creator                                     \\
+	             & \Icon{github} \hspace{0.1mm} testing-library/webdriverio-testing-library           \\
+	             & \begin{itemize}
+		               \item Adds DOM Testing Library queries to WebdriverIO E2E testing library.
+		               \item Incorperated into the Testing Library organisation.
+	               \end{itemize}          \\
+
+	Typescript   & {\bf Mock Service Worker}  --  Contributor                                         \\
+	             & \Icon{github} \hspace{0.1mm} mswjs                                                 \\
+	             & \begin{itemize}
+		               \item Added nullable types to mswjs/data schema
+	               \end{itemize}                                     \\
+
+	Python       & {\bf pi-top Python SDK}  --  Contributor                                           \\
+	Flask        & \Icon{github} \hspace{0.1mm} pi-top/pi-top-Python-SDK                              \\
+	             & \begin{itemize}
+		               \item Created Flask based framework to create web controllers for robotics projects
+		               \item Created UI framework for building pi-top miniscreen applications
+	               \end{itemize} \\
+
+	React Native & {\bf Act One}  --  Creator                                                         \\
+	Express      & \Icon{github} \hspace{0.1mm} olivierwilkinson/act-one                              \\
+	GraphQL      & \begin{itemize}
+		               \item Full-stack rewrite of the original Swift app created in 2015
+	               \end{itemize}                  \\
+
+	LaTeX        & {\bf My CV}  --  Creator                                                           \\
+	             & \Icon{github} \hspace{0.1mm} olivierwilkinson/CV                                   \\
+	             & \begin{itemize}
+		               \item PDF generated from LaTeX source. Older versions can be found in releases.
+	               \end{itemize}                         \\
+	             &                                                                                    \\
 \end{tabular}
 \end{document}
