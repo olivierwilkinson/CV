@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{array, xcolor}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 % Setup packages
 \graphicspath{ {./assets/} }
@@ -19,11 +20,20 @@
 \hyphenpenalty=1000 % Don't break words unless necessary
 
 % Define table style
-\newcolumntype{L}{>{\raggedleft}p{0.15\textwidth}}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
 \definecolor{lightgray}{gray}{0.8}
 \newcommand\VerticalRule{\color{lightgray}\vrule width 0.5pt}
 \setlength{\extrarowheight}{5pt}
+
+
+% Define list style
+\newlist{items}{itemize}{1}
+\setlist[items]{
+	label=\textbullet,
+	topsep=0pt,
+	leftmargin=2em,
+}
 
 % Setup icons
 \newcommand{\Icon}[2][0.5cm]{
@@ -36,29 +46,36 @@
 \begin{document}
 \maketitle
 
+One of my great joys is sharing in someone's passion with them, it is equal
+parts fascinating and broadening, often sparking my own interest or a change in
+perspective. This is the one of the aspects fundamental to my love of Software
+Engineering: it is a field of enourmous scope and variety, full of individuals
+passionate about their craft. Excitement for different ideas or perspectives
+can be infectious, not only advancing my own skills but also the skills of those
+around me. I can say confidently that all of my peers have improved me as a
+developer, and that they would say the same about me.
+
 \section*{Employment}
 \begin{tabular}{L!{\VerticalRule}R}
-	2017--present & {\bf Pi-top} -- Senior Software Engineer                                                                                                                                                                                       \\
-	              & \begin{itemize}
+	2017--present & {\bf Pi-top} -- Senior Software Engineer                                                                                                                                                   \\
+	              & \begin{items}
 		                \item Technological lead of pi-top's flagship software product: Further, a React app for creating and teaching programming lessons through building robotics projects with pi-top hardware.
 		                \item Heavily involved in product and design decisions, working closely with designers and stakeholders.
 		                \item Experience leading and managing the Web team.
 		                \item Spearheaded the use of Typescript in Further and related backend services.
-						\item Improved testing practices, reducing the number of tests while simultaneously increasing their coverage and stability using Mock Service Worker and WebdriverIO.
-						\item Moved GraphQL server to code-first schema generation using Nexus.
-						\item Implemented Keycloak based user authentication and management, and added SSO integrations with Google Cloud, Microsoft Azure and Clever.
-						\item Helped improved infrastructure management and automated release pipelines using Terraform and Semantic Release respectively.
+		                \item Improved testing practices, reducing the number of tests while simultaneously increasing their coverage and stability using Mock Service Worker and WebdriverIO.
+		                \item Moved GraphQL server to code-first schema generation using Nexus.
+		                \item Implemented Keycloak based user authentication and management, and added SSO integrations with Google Cloud, Microsoft Azure and Clever.
+		                \item Helped improved infrastructure management and automated release pipelines using Terraform and Semantic Release respectively.
 		                \item Helped design and build the pi-top Python SDK, a library for using pi-top devices to build robotics projects.
-	                \end{itemize} \\
-	              &                                                                                                                                                                                                                                \\
+	                \end{items} \\
 
-	2015--2017    & {\bf Act One Interactive}  --  Co-founder                                                                                                                                                                                      \\
-	              & \begin{itemize}
+	2015--2017    & {\bf Act One Interactive}  --  Co-founder                                                                                                                                                  \\
+	              & \begin{items}
 		                \item  Learnt Objective-C, Swift and Firebase to produce a line learning, recording and rehearsal iOS app for actors.
-	                \end{itemize}                                                                                                                                                     \\
-	              &                                                                                                                                                                                                                                \\
+	                \end{items}                                                                       \\
 
-	2013--2015    & {\bf Africa Risk Consulting}  --  Junior Analyst                                                                                                                                                                               \\
+	2013--2015    & {\bf Africa Risk Consulting}  --  Junior Analyst                                                                                                                                           \\
 \end{tabular}
 
 \section*{Education}
@@ -77,35 +94,34 @@
 \begin{tabular}{L!{\VerticalRule}R}
 	Typescript   & {\bf WebdriverIO Testing Library}  --  Creator                                     \\
 	             & \Icon{github} \hspace{0.1mm} testing-library/webdriverio-testing-library           \\
-	             & \begin{itemize}
+	             & \begin{items}
 		               \item Adds DOM Testing Library queries to WebdriverIO E2E testing library.
 		               \item Incorperated into the Testing Library organisation.
-	               \end{itemize}          \\
+	               \end{items}          \\
 
 	Typescript   & {\bf Mock Service Worker}  --  Contributor                                         \\
 	             & \Icon{github} \hspace{0.1mm} mswjs                                                 \\
-	             & \begin{itemize}
+	             & \begin{items}
 		               \item Added nullable types to mswjs/data schema
-	               \end{itemize}                                     \\
+	               \end{items}                                     \\
 
 	Python       & {\bf pi-top Python SDK}  --  Contributor                                           \\
 	Flask        & \Icon{github} \hspace{0.1mm} pi-top/pi-top-Python-SDK                              \\
-	             & \begin{itemize}
+	             & \begin{items}
 		               \item Created Flask based framework to create web controllers for robotics projects
 		               \item Created UI framework for building pi-top miniscreen applications
-	               \end{itemize} \\
+	               \end{items} \\
 
 	React Native & {\bf Act One}  --  Creator                                                         \\
 	Express      & \Icon{github} \hspace{0.1mm} olivierwilkinson/act-one                              \\
-	GraphQL      & \begin{itemize}
+	GraphQL      & \begin{items}
 		               \item Full-stack rewrite of the original Swift app created in 2015
-	               \end{itemize}                  \\
+	               \end{items}                  \\
 
 	LaTeX        & {\bf My CV}  --  Creator                                                           \\
 	             & \Icon{github} \hspace{0.1mm} olivierwilkinson/CV                                   \\
-	             & \begin{itemize}
+	             & \begin{items}
 		               \item PDF generated from LaTeX source. Older versions can be found in releases.
-	               \end{itemize}     \\
-	             &                                                                                    \\
+	               \end{items}     \\
 \end{tabular}
 \end{document}
