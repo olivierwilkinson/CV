@@ -6,7 +6,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{array, xcolor}
 \usepackage{graphicx}
+\usepackage{cellspace}
 \usepackage{enumitem}
+\usepackage{xparse}
 
 % Setup packages
 \graphicspath{ {./assets/} }
@@ -36,11 +38,10 @@
 }
 
 % Setup icons
-\newcommand{\Icon}[2][0.5cm]{
-	\begingroup
-	\setbox0=\hbox{\includegraphics[height=#1, width=#1]{#2}}
-	\parbox{\wd0}{\box0}
-	\endgroup
+\NewDocumentCommand{\Icon}{ O{0.5cm} O{0.5cm} O{-0.05\height} m } {
+    \begin{tabular}{@{}c@{}}
+        \raisebox{#3}{\includegraphics[height=#1, width=#2]{#4}}
+    \end{tabular}
 }
 
 \begin{document}
@@ -124,4 +125,19 @@ developer, and that they would say the same about me.
 		               \item PDF generated from LaTeX source. Older versions can be found in releases.
 	               \end{items}     \\
 \end{tabular}
+
+\section*{Skills}
+\Icon{typescript} Typescript \hspace{1.5mm}
+\Icon{html} HTML \hspace{1.5mm}
+\Icon{css} CSS \hspace{1.5mm}
+\Icon[0.5cm][0.6cm]{react} React / React Native \hspace{1.5mm}
+\Icon[0.5cm][0.5cm][0\height]{node} Node / Express \hspace{1.5mm}
+\Icon{graphql} GraphQL \hspace{1.5mm} \\
+\Icon[0.5cm][0.3cm]{mongo} MongoDB \hspace{1.5mm}
+\Icon{sql} SQL \hspace{1.5mm}
+\Icon[0.5cm][0.6cm]{gcloud} Google Cloud \hspace{1.5mm}
+\Icon{terraform} Terraform \hspace{1.5mm}
+\Icon{python} Python \hspace{1.5mm}
+\Icon{swift} Swift \hspace{1.5mm}
+
 \end{document}
