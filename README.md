@@ -19,8 +19,6 @@ Semantic Release.
 
 ## Motivation
 
-First and foremost: it sounded fun! There are a couple benefits though:
-
 LaTeX is something I last used at university to write my dissertation and I
 found that, while challenging, it gave me really great control over the final
 document. Traditional word processors never gave me the same control I remember

@@ -1,130 +1,222 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 % Packages
-\usepackage[margin=0.8cm]{geometry}
-\usepackage[sfdefault]{roboto}
+\usepackage[paper=a4paper,margin=1cm]{geometry}
+\usepackage[defaultfam,extralight,tabular,lining]{montserrat}
 \usepackage[T1]{fontenc}
-\usepackage{array, xcolor}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
 \usepackage{cellspace}
 \usepackage{enumitem}
 \usepackage{xparse}
+\usepackage{titling}
+\usepackage{hyperref}
 
-% Setup packages
+% Define page styles
+\hyphenpenalty=1000 % Don't break words unless necessary
+\pagenumbering{gobble}
+
+% Define colours
+\colorlet{Black}{black!90}
+\colorlet{LightBlack}{black!80}
+\colorlet{Gray}{black!70}
+
+% Setup font
+\newcommand\body{\normalfont\color{Black}}
+\newcommand\heading{\bfseries\scshape\color{LightBlack}}
+\newcommand\headingOne{\heading\Huge}
+\newcommand\headingTwo{\heading\Large}
+\newcommand{\bold}[1]{\textbf{\textcolor{LightBlack}{#1}}}
+\newcommand{\boldsoft}[1]{\textbf{\textcolor{Gray}{#1}}}
+
+% Setup assets
 \graphicspath{ {./assets/} }
 
-% Document metadata
-\title{\bfseries\Huge Olivier Wilkinson}
-\author{olivier.wilkinson@gmail.com\\+447931405305}
-\date{} % Don't show a date
-
-% Define general styles
-\hyphenpenalty=1000 % Don't break words unless necessary
-
-% Define table style
-\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
-\newcolumntype{R}{p{0.8\textwidth}}
-\definecolor{lightgray}{gray}{0.8}
-\newcommand\VerticalRule{\color{lightgray}\vrule width 0.5pt}
-\setlength{\extrarowheight}{5pt}
-
-
-% Define list style
-\newlist{items}{itemize}{1}
-\setlist[items]{
-	label=\textbullet,
-	topsep=0pt,
-	leftmargin=2em,
+% Define hyperlink styles
+\hypersetup{
+    colorlinks=true,
+    linkcolor=Black,
+    filecolor=Black,
+    urlcolor=Black,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen
 }
+\urlstyle{same}
 
-% Setup icons
+% Define rule styles
+\newcommand\fullrule{\vspace{0.2cm}\noindent\makebox[\linewidth]{\color{Periwinkle!50}\rule{\paperwidth}{1.5pt}}}
+
+% Define icon styles
 \NewDocumentCommand{\Icon}{ O{0.5cm} O{0.5cm} O{-0.05\height} m } {
     \begin{tabular}{@{}c@{}}
         \raisebox{#3}{\includegraphics[height=#1, width=#2]{#4}}
     \end{tabular}
 }
 
+% Define GitHub link
+\newcommand{\GitHubLink}[1]{\href{http://www.github.com/#1}{\Icon{github} #1}}
+
+% setup title styles
+\pretitle{\vspace*{-1.5cm}\headingOne\hspace*{-0.55cm}}
+
+% add space between title and author
+\posttitle{\par\vspace{0.3em}} % Reduced space between title and first section
+
+% setup author styles
+\preauthor{\fontsize{18bp}{18bp}\color{Black}\selectfont\scshape\hspace*{-0.55cm}}
+
+% add contact details after author
+\postauthor{
+	\par
+	\fullrule
+
+	\vspace*{0.4cm}
+	\fontsize{10bp}{10bp}\selectfont\normalshape
+	\hspace*{-0.9cm}
+	\begin{tabular}{cccc}
+			\href{mailto:olivier.wilkinson@gmail.com}{\Icon{email} olivier.wilkinson@gmail.com} & \href{tel:+447931405305}{\Icon{phone} +447931405305} & \GitHubLink{olivierwilkinson} & \href{http://www.linkedin.com/in/olivierwilkinson}{\Icon{linkedin} olivierwilkinson}
+	\end{tabular}
+
+	\fullrule
+	
+	% correct spacing between title and first section
+	\vspace*{-2.2cm}
+}
+
+% define section styles
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{0cm}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\headingTwo}}
+\makeatother
+
+% Define table style
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VerticalRule{\color{Periwinkle!50}\vrule width 0.5pt}
+\setlength{\extrarowheight}{5pt}
+\newenvironment{sectiontable}
+{
+	\begin{tabular}{L!{\VerticalRule}R}
+}
+{
+	\end{tabular}
+}
+
+% Define list style
+\newlist{items}{itemize}{1}
+\setlist[items]{
+	label=\textbullet,
+	topsep=0pt,
+	leftmargin=1em,
+	parsep=2pt,
+}
+
+% Document metadata
+\title{Olivier Wilkinson}
+\author{Senior Software Engineer}
+\date{} % Don't show a date
+
 \begin{document}
 \maketitle
 
-One of my great joys is sharing in someone's passion with them, it is equal
-parts fascinating and broadening, often sparking my own interest or a change in
-perspective. This is the one of the aspects fundamental to my love of Software
-Engineering: it is a field of enormous scope and variety, full of individuals
-passionate about their craft. Excitement for different ideas or perspectives
-can be infectious, not only advancing my own skills but also the skills of those
-around me. I can say confidently that all of my peers have improved me as a
-developer, and that they would say the same about me.
+\section*{}
+Software Engineering is a field of enormous scope and variety, brimming with individuals passionate about their craft.
+I've been fortunate to work with many such individuals, each with their own unique perspective and approach to problem-solving.
+Embracing a diversity of thought brings growth, often in unexpected ways. I'm proud to say that I've grown tremendously
+from working with my colleagues, and that they feel the same way.
 
 \section*{Employment}
-\begin{tabular}{L!{\VerticalRule}R}
-	2017--present & {\bf Pi-top} -- Senior Software Engineer                                                                                                                                                   \\
+\begin{sectiontable}
+	2017--present & \bold{Pi-top -- \textit{Senior Software Engineer}}                                                                                                                                                                                                            \\
 	              & \begin{items}
-		                \item Technological lead of pi-top's flagship software product: Further, a React app for creating and teaching programming lessons through building robotics projects with pi-top hardware.
-		                \item Heavily involved in product and design decisions, working closely with designers and stakeholders.
-		                \item Experience leading and managing the Web team.
-		                \item Spearheaded the use of Typescript in Further and related backend services.
-		                \item Improved testing practices, reducing the number of tests while simultaneously increasing their coverage and stability using Mock Service Worker and WebdriverIO.
-		                \item Moved GraphQL server to code-first schema generation using Nexus.
-		                \item Implemented Keycloak based user authentication and management, and added SSO integrations with Google Cloud, Microsoft Azure and Clever.
-		                \item Helped improved infrastructure management and automated release pipelines using Terraform and Semantic Release respectively.
-		                \item Helped design and build the pi-top Python SDK, a library for using pi-top devices to build robotics projects.
+		                \item Played a pivotal role in the development of Further, a React application focused on teaching computer science and programming through Pi-top robotics projects.
+		                \item Championed and led the integration of Typescript in web projects.
+		                \item Increased scalability and simplicity of authorization within Further using SpiceDB, a relational authorization service.
+		                \item Implemented Keycloak-based user authentication, including SSO integrations.
+		                \item Built a Further iOS app to enable Web-Bluetooth connections to pi-top robots.
+		                \item Contributed to the design of Further, working closely with designers and stakeholders.
+		                \item Worked closely with stakeholders to pivot Further into a SaaS and Marketplace platform, emphasizing content creation, purchase and licensing.
+		                \item Collaborated with MakerBot, a billion-dollar 3D printing company, to facilitate the use of Further for their teacher and student certification programs.
+		                \item Established a B2B sales pipeline and pitch for Further, aligning product positioning and roadmap with the management team.
+		                \item Successfully presented and demonstrated Further to other major education hardware companies.
+		                \item Worked closely with the Sales team to establish Customer Success pipelines and automations.
+		                \item Contributed to the pi-top Python SDK by creating a Flask-based framework for web controllers and a UI framework for pi-top[4] miniscreen applications.
+		                \item Supervised and supported other team members, and managed the Agile development process.
+		                \item Further features include: multi-file Python project editing; remote code execution; live robot output including video; comprehensive content creation and versioning; real-time collaboration; class creation and management; and premium content licensing.
 	                \end{items} \\
 
-	2015--2017    & {\bf Act One Interactive}  --  Co-founder                                                                                                                                                  \\
+	2015--2017    & \bold{Act One Interactive -- \textit{Co-founder}}                                                                                                                                                                                                             \\
 	              & \begin{items}
-		                \item  Learnt Objective-C, Swift and Firebase to produce a line learning, recording and rehearsal iOS app for actors.
-	                \end{items}                                                                       \\
+		                \item Self-taught Swift and iOS development to produce a line learning, recording, and rehearsal iOS app for actors.
+		                \item Used real performances from other actors in the app to populate learning materials.
+	                \end{items}                                                                                                                                               \\
 
-	2013--2015    & {\bf Africa Risk Consulting}  --  Junior Analyst                                                                                                                                           \\
-\end{tabular}
+	2013--2015    & \bold{Africa Risk Consulting  --  \textit{Junior Analyst}}                                                                                                                                                                                                    \\
+\end{sectiontable}
+
+\pagebreak
+\vspace*{-1cm}
+\hspace*{-0.7cm}
+\begin{tabular*}{1.0\textwidth}{@{\extracolsep{\fill} } l r}
+	\scshape Olivier Wilkinson & 2 \\
+\end{tabular*}
+\par
+\fullrule
 
 \section*{Education}
-\begin{tabular}{L!{\VerticalRule}R}
-	2009--2013 & {\bf University of Bristol}                                            \\
-	           & B.Sc. in Physics                                                         \\
-
+\begin{sectiontable}
+	2009--2013 & \bold{University of Bristol}                                           \\
+	           & B.Sc. in Physics                                                       \\
 	           &                                                                        \\
 
-	2003--2009 & {\bf Bedales School}                                                   \\
+	2003--2009 & \bold{Bedales School}                                                  \\
 	           & A-level: AAB (Mathematics, Physics, Chemistry)                         \\
 	           & AS-level: AAA (Further Mathematics, Economics, Information Technology) \\
-\end{tabular}
+\end{sectiontable}
 
 \section*{Open Source}
-\begin{tabular}{L!{\VerticalRule}R}
-	Typescript   & {\bf WebdriverIO Testing Library}  --  Creator                                     \\
-	             & \Icon{github} \hspace{0.1mm} testing-library/webdriverio-testing-library           \\
-	             & \begin{items}
-		               \item Adds DOM Testing Library queries to WebdriverIO E2E testing library.
-		               \item Incorporated into the Testing Library organisation.
-	               \end{items}          \\
+\begin{sectiontable}
+	Typescript & \bold{WebdriverIO Testing Library}  --  \textit{Creator}                                   \\
+	           & \GitHubLink{testing-library/webdriverio-testing-library}                                   \\
+	           & \begin{items}
+		             \item Adds DOM Testing Library queries to WebdriverIO E2E testing library.
+		             \item Incorporated into the Testing Library organisation.
+	             \end{items}                  \\
 
-	Typescript   & {\bf Mock Service Worker}  --  Contributor                                         \\
-	             & \Icon{github} \hspace{0.1mm} mswjs                                                 \\
-	             & \begin{items}
-		               \item Added nullable types to mswjs/data schema
-	               \end{items}                                     \\
+	Typescript & \bold{Prisma Soft Delete Extension}  --  \textit{Creator}                                  \\
+	           & \GitHubLink{olivierwilkinson/prisma-extension-soft-delete}                                 \\
+	           & \begin{items}
+		             \item Soft-delete extension for Prisma clients with full support for nested relations.
+		             \item Leverages Prisma Extension Nested Operations library listed below.
+	             \end{items}      \\
 
-	Python       & {\bf pi-top Python SDK}  --  Contributor                                           \\
-	Flask        & \Icon{github} \hspace{0.1mm} pi-top/pi-top-Python-SDK                              \\
-	             & \begin{items}
-		               \item Created Flask based framework to create web controllers for robotics projects
-		               \item Created UI framework for building pi-top miniscreen applications
-	               \end{items} \\
+	Typescript & \bold{Prisma Extension Nested Operations}  --  \textit{Creator}                            \\
+	           & \GitHubLink{olivierwilkinson/prisma-extension-nested-operations}                           \\
+	           & \begin{items}
+		             \item Adds support for operating on nested relations in Prisma extensions.
+	             \end{items}                  \\
 
-	React Native & {\bf Act One}  --  Creator                                                         \\
-	Express      & \Icon{github} \hspace{0.1mm} olivierwilkinson/act-one                              \\
-	GraphQL      & \begin{items}
-		               \item Full-stack rewrite of the original Swift app created in 2015
-	               \end{items}                  \\
+	Typescript & \bold{Act One} -- \textit{Creator}                                                         \\
+	           & \GitHubLink{olivierwilkinson/act-one-native}                                               \\
+	           & \begin{items}
+		             \item In-progress reimplementation of the Act One app in React Native with a GraphQL API.
+	             \end{items}   \\
 
-	LaTeX        & {\bf My CV}  --  Creator                                                           \\
-	             & \Icon{github} \hspace{0.1mm} olivierwilkinson/CV                                   \\
-	             & \begin{items}
-		               \item PDF generated from LaTeX source. Older versions can be found in releases.
-	               \end{items}     \\
-\end{tabular}
+	Typescript & \bold{Mock Service Worker Data}  --  \textit{Contributor}                                  \\
+	           & \GitHubLink{mswjs/data}                                                                    \\
+	           & \begin{items}
+		             \item Added nullable types to schema.
+	             \end{items}                                                       \\
+
+	LaTeX      & \bold{My CV}  --  \textit{Creator}                                                         \\
+	           & \GitHubLink{olivierwilkinson/CV}                                                           \\
+	           & \begin{items}
+		             \item This CV was written in LaTeX and generated using GitHub Actions and semantic-release.
+	             \end{items} \\
+\end{sectiontable}
 
 \section*{Skills}
 \Icon{typescript} Typescript \hspace{1.5mm}
@@ -133,11 +225,12 @@ developer, and that they would say the same about me.
 \Icon[0.5cm][0.6cm]{react} React / React Native \hspace{1.5mm}
 \Icon[0.5cm][0.5cm][0\height]{node} Node / Express \hspace{1.5mm}
 \Icon{graphql} GraphQL \hspace{1.5mm} \\
-\Icon[0.5cm][0.3cm]{mongo} MongoDB \hspace{1.5mm}
 \Icon{sql} SQL \hspace{1.5mm}
+\Icon[0.5cm][0.3cm]{mongo} MongoDB \hspace{1.5mm}
 \Icon[0.5cm][0.6cm]{gcloud} Google Cloud \hspace{1.5mm}
 \Icon{terraform} Terraform \hspace{1.5mm}
 \Icon{python} Python \hspace{1.5mm}
 \Icon{swift} Swift \hspace{1.5mm}
+\Icon{r} R \hspace{1.5mm}
 
 \end{document}
