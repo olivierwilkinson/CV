@@ -90,7 +90,7 @@ cpan Unicode::GCString
 
 [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
 
-[build-badge]: https://img.shields.io/github/workflow/status/olivierwilkinson/CV/main/main?style=flat
-[build]: https://github.com/olivierwilkinson/CV/actions?query=branch%3Amain+workflow%3Amain
-[release-badge]: https://img.shields.io/github/v/release/olivierwilkinson/CV?display_name=release&style=flat
+[build-badge]: https://img.shields.io/github/actions/workflow/status/olivierwilkinson/CV/main.yml?branch=main&style=flat
+[build]: https://github.com/olivierwilkinson/CV/actions/workflows/main.yaml?query=branch%3Amain
+[release-badge]: https://img.shields.io/github/v/release/olivierwilkinson/CV?style=flat
 [release]: https://github.com/olivierwilkinson/CV/releases
